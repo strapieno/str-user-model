@@ -2,13 +2,14 @@
 
 namespace Strapieno\User\Model\Entity;
 
-use EarlyNinja\Sdk\Model\Entity\AbstractEntity;
+use Matryoshka\Model\Object\ActiveRecord\AbstractActiveRecord;
 use Strapieno\ModelUtils\Entity\DateHistoryAwareTrait;
+use Zend\Stdlib\Hydrator\HydratorAwareTrait;
 
 /**
  * Class UserEntity
  */
-class UserEntity extends AbstractEntity implements UserInterface
+class UserEntity extends AbstractActiveRecord implements UserInterface
 {
     use DateHistoryAwareTrait;
     use UserTrait;

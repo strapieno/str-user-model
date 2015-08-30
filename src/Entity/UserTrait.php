@@ -2,8 +2,10 @@
 
 namespace Strapieno\User\Model\Entity;
 
-
-class UserTrait
+/**
+ * Trait UserTrait
+ */
+trait UserTrait
 {
     /**
      * @var string
