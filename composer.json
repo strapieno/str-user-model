@@ -5,17 +5,36 @@
   "homepage": "http://github.com/earlyninja/kokoro",
   "require": {
     "php": ">=5.5.0",
-    "zendframework/zendframework": "~2.5",
+    "zendframework/zend-modulemanager": "2.5.*",
+    "zendframework/zend-stdlib": "2.5.*",
+    "zendframework/zend-loader": "2.5.*",
+    "zendframework/zend-mvc": "2.5.*",
+    "zendframework/zend-servicemanager": "2.5.*",
+    "zendframework/zend-inputfilter": "2.5.*"
     "matryoshka-model/matryoshka": "0.8.*@dev",
     "matryoshka-model/zf2-matryoshka-module": "0.8.*@dev",
-    "matryoshka-model/mongo-wrapper": "0.8.*@dev"
+    "matryoshka-model/mongo-wrapper": "0.8.*@dev",
+    "strapieno/str-model-utils" : "dev-develop"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.7",
     "zendframework/zftool": "dev-master",
-    "stripe/stripe-php": "2.*"
+    "robertboloc/zf2-components-list-generator": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "Strapieno\\User\\Model\\": "src/",
+      "Strapieno\\User\\ModelTest\\": "tests/"
+    },
+    "classmap": [
+      "./Module.php"
+    ]
   },
   "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:strapieno/str-model-utils.git"
+    }
   ],
   "authors": [
     {

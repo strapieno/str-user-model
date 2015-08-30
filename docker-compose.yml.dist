@@ -1,0 +1,12 @@
+fpm:
+  build: docker/dockerfiles/php-fpm
+  volumes:
+    - docker/php-fpm/etc:/usr/local/php/etc
+    - .:/var/www/str-user-model
+  links:
+    - mongo:mongo
+
+mongo:
+  image: mongo:3.0.4
+  volumes:
+    - docker/mongo/data:/data/db

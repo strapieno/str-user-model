@@ -1,1 +1,1 @@
-# User model
+# Strapieno user model
