@@ -5,9 +5,9 @@ return [
         'invokables' => [
             'Strapieno\User\Model\Criteria\UserCollectionCriteria' =>
                 'Strapieno\User\Model\Criteria\Mongo\UserMongoCollectionCriteria',
-            'Strapieno\Model\Mongo\IsolatedActiveRecordCriteria'
+            'Strapieno\User\Model\Criteria\IsolatedActiveRecordCriteria'
                 => 'Matryoshka\Model\Wrapper\Mongo\Criteria\Isolated\ActiveRecordCriteria',
-            'Strapieno\Model\Mongo\NotIsolatedActiveRecordCriteria'
+            'Strapieno\User\Model\Criteria\NotIsolatedActiveRecordCriteria'
                 => 'Matryoshka\Model\Wrapper\Mongo\Criteria\ActiveRecord\ActiveRecordCriteria',
         ],
         'aliases' => [
@@ -28,7 +28,7 @@ return [
     'matryoshka-objects' => [
         'User' => [
             'type' => 'Strapieno\User\Model\Entity\UserEntity',
-            'active_record_criteria' => 'Strapieno\Model\Mongo\NotIsolatedActiveRecordCriteria'
+            'active_record_criteria' => 'Strapieno\User\Model\Criteria\NotIsolatedActiveRecordCriteria'
         ],
     ],
     'matryoshka-models' => [

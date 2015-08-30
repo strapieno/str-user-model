@@ -16,7 +16,7 @@ class UserMongoCollectionCriteria extends FindAllCriteria
     public function setUserName($userName)
     {
         // TODO add hydrator
-        $this->selectionCriteria['user_name'] = (string)$userName;
+        $this->selectionCriteria['user_name'] = (string) $userName;
         return $this;
     }
 
