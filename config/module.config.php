@@ -2,6 +2,10 @@
 
 return [
     'service_manager' => [
+        'abstract_factories' => [
+            'Matryoshka\Model\Wrapper\Mongo\Service\MongoDbAbstractServiceFactory',
+            'Matryoshka\Model\Wrapper\Mongo\Service\MongoCollectionAbstractServiceFactory'
+        ],
         'invokables' => [
             'Strapieno\User\Model\Criteria\UserCollectionCriteria' =>
                 'Strapieno\User\Model\Criteria\Mongo\UserMongoCollectionCriteria',
