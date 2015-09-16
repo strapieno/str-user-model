@@ -15,7 +15,7 @@ return [
                 => 'Matryoshka\Model\Wrapper\Mongo\Criteria\ActiveRecord\ActiveRecordCriteria',
         ],
         'aliases' => [
-            'Strapieno\Model\ResultSet\HydratingResultSet' => 'Matryoshka\Model\ResultSet\HydratingResultSet',
+            'Strapieno\Model\ResultSet\HydratingResultSet' => 'Matryoshka\Model\Wrapper\Mongo\ResultSet stat\HydratingResultSet',
         ]
     ],
     'mongodb' => [
