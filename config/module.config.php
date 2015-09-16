@@ -1,5 +1,4 @@
 <?php
-
 return [
     'service_manager' => [
         'abstract_factories' => [
@@ -7,15 +6,24 @@ return [
             'Matryoshka\Model\Wrapper\Mongo\Service\MongoCollectionAbstractServiceFactory'
         ],
         'invokables' => [
-            'Strapieno\User\Model\Criteria\UserCollectionCriteria' =>
-                'Strapieno\User\Model\Criteria\Mongo\UserMongoCollectionCriteria',
-            'Strapieno\User\Model\Criteria\IsolatedActiveRecordCriteria'
-                => 'Matryoshka\Model\Wrapper\Mongo\Criteria\Isolated\ActiveRecordCriteria',
-            'Strapieno\User\Model\Criteria\NotIsolatedActiveRecordCriteria'
-                => 'Matryoshka\Model\Wrapper\Mongo\Criteria\ActiveRecord\ActiveRecordCriteria',
+            'Strapieno\User\Model\Criteria\Mongo\UserMongoCollectionCriteria'
+            => 'Strapieno\User\Model\Criteria\Mongo\UserMongoCollectionCriteria',
+            'Matryoshka\Model\Wrapper\Mongo\Criteria\Isolated\ActiveRecordCriteria'
+            => 'Matryoshka\Model\Wrapper\Mongo\Criteria\Isolated\ActiveRecordCriteria',
+            'Matryoshka\Model\Wrapper\Mongo\Criteria\ActiveRecord\ActiveRecordCriteria'
+            => 'Matryoshka\Model\Wrapper\Mongo\Criteria\ActiveRecord\ActiveRecordCriteria',
+            'Matryoshka\Model\Wrapper\Mongo\ResultSet\HydratingResultSet' =>
+                'Matryoshka\Model\Wrapper\Mongo\ResultSet\HydratingResultSet'
         ],
         'aliases' => [
-            'Strapieno\Model\ResultSet\HydratingResultSet' => 'Matryoshka\Model\Wrapper\Mongo\ResultSet stat\HydratingResultSet',
+            'Strapieno\User\Model\Criteria\UserCollectionCriteria'
+            => 'Strapieno\User\Model\Criteria\Mongo\UserMongoCollectionCriteria',
+            'Strapieno\User\Model\Criteria\IsolatedActiveRecordCriteria'
+            => 'Matryoshka\Model\Wrapper\Mongo\Criteria\Isolated\ActiveRecordCriteria',
+            'Strapieno\User\Model\Criteria\NotIsolatedActiveRecordCriteria'
+            => 'Matryoshka\Model\Wrapper\Mongo\Criteria\ActiveRecord\ActiveRecordCriteria',
+            'Strapieno\Model\ResultSet\HydratingResultSet'
+            => 'Matryoshka\Model\Wrapper\Mongo\ResultSet\HydratingResultSet',
         ]
     ],
     'mongodb' => [
@@ -44,7 +52,7 @@ return [
             'paginator_criteria' => 'Strapieno\User\Model\Criteria\UserCollectionCriteria',
             'hydrator' => 'Strapieno\User\Model\Hydrator\Mongo\UserModelMongoHydrator',
             'listeners' => [
-            //    'EarlyNinja\Kokoro\ModelStdlib\Listener\DateAwareListener',
+                'EarlyNinja\Kokoro\ModelStdlib\Listener\DateAwareListener',
             ],
         ],
     ],
