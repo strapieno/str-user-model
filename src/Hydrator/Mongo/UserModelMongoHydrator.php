@@ -15,5 +15,4 @@ class UserModelMongoHydrator extends DateHistoryHydrator
         $this->addStrategy('date_created', new MongoDateStrategy());
         parent::__construct($underscoreSeparatedKeys);
     }
-
 }
