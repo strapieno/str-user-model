@@ -13,4 +13,12 @@ class UserEntity extends AbstractActiveRecord implements UserInterface
 {
     use DateHistoryAwareTrait;
     use UserTrait;
+
+    /**
+     * @return mixed
+     */
+    public function getIdentity()
+    {
+        return $this->userName;
+    }
 }

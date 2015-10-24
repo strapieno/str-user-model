@@ -2,6 +2,7 @@
 
 namespace Strapieno\User\Model\Hydrator\Mongo;
 
+use Matryoshka\Model\Wrapper\Mongo\Hydrator\Strategy\MongoDateStrategy;
 use Strapieno\ModelUtils\Hydrator\Mongo\DateHistoryHydrator;
 
 /**
@@ -9,5 +10,10 @@ use Strapieno\ModelUtils\Hydrator\Mongo\DateHistoryHydrator;
  */
 class UserModelMongoHydrator extends DateHistoryHydrator
 {
+    public function __construct($underscoreSeparatedKeys = true)
+    {
+        $this->addStrategy('date_created', new MongoDateStrategy());
+        parent::__construct($underscoreSeparatedKeys);
+    }
 
 }

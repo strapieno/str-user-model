@@ -12,8 +12,10 @@ use Zend\Stdlib\Hydrator\HydratorAwareInterface;
 interface UserInterface extends
     EntityInterface,
     DateHistoryAwareInterface,
-    HydratorAwareInterface
+    HydratorAwareInterface,
+    UserIndentityAwareInterface
 {
+
     /**
      * @return string
      */
@@ -24,4 +26,48 @@ interface UserInterface extends
      * @return $this
      */
     public function setUserName($userName);
+
+    /**
+     * @return DateTime
+     */
+    public function getBirthDate();
+
+    /**
+     * @param DateTime $birthDate
+     * @return $this
+     */
+    public function setBirthDate(DateTime $birthDate);
+
+    /**
+     * @return array
+     */
+    public function getEmail();
+
+    /**
+     * @param array $email
+     * @return $this
+     */
+    public function setEmail($email);
+
+    /**
+     * @return string
+     */
+    public function getLastName();
+
+    /**
+     * @param string $lastName
+     * @return $this
+     */
+    public function setLastName($lastName);
+
+    /**
+     * @return string
+     */
+    public function getFirstName();
+
+    /**
+     * @param string $firstName
+     * @return $this
+     */
+    public function setFirstName($firstName);
 }
