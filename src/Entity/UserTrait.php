@@ -64,7 +64,7 @@ trait UserTrait
      * @param DateTime $birthDate
      * @return $this
      */
-    public function setBirthDate(DateTime $birthDate)
+    public function setBirthDate(DateTime $birthDate = null)
     {
         $this->birthDate = $birthDate;
         return $this;

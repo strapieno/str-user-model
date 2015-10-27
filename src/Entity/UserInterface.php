@@ -37,7 +37,7 @@ interface UserInterface extends
      * @param DateTime $birthDate
      * @return $this
      */
-    public function setBirthDate(DateTime $birthDate);
+    public function setBirthDate(DateTime $birthDate = null);
 
     /**
      * @return array
