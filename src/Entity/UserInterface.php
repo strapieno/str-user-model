@@ -2,6 +2,7 @@
 
 namespace Strapieno\User\Model\Entity;
 
+use DateTime;
 use Strapieno\ModelUtils\Entity\DateHistoryAwareInterface;
 use Strapieno\ModelUtils\Entity\EntityInterface;
 use Zend\Stdlib\Hydrator\HydratorAwareInterface;
