@@ -21,12 +21,12 @@ class UserModelService extends ObservableModel implements UserModelInterface
         // TODO Manager criteria
         $criteria = new UserMongoCollectionCriteria();
         $setMethod = 'set' . (new UnderscoreToCamelCase())->filter($nameField);
-        if (!method_exists($criteria, $setMethod) {
+        if (!method_exists($criteria, $setMethod)) {
             // TODO Review
             throw new \RuntimeException('Method not found');
         }
 
-        $criteria->$setMethod($valueFiled)
+        $criteria->$setMethod($valueFiled);
         return $this->find($criteria);
     }
 }
