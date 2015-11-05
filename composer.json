@@ -8,6 +8,7 @@
     "zendframework/zend-loader": "2.5.*",
     "zendframework/zend-mvc": "2.5.*",
     "zendframework/zend-servicemanager": "2.5.*",
+    "zendframework/zend-permissions-acl": "2.5.*",
     "zendframework/zend-inputfilter": "2.5.*",
     "matryoshka-model/matryoshka": "0.8.*@dev",
     "matryoshka-model/mongo-wrapper": "0.8.*@dev",
