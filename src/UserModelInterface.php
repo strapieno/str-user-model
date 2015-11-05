@@ -10,7 +10,6 @@ use Matryoshka\Model\ModelStubInterface;
 
 /**
  * Interface UserModelInterface
- * TODO Refactor generic Module
  */
 interface UserModelInterface extends ModelInterface
 {
