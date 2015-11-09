@@ -5,6 +5,7 @@ namespace Strapieno\User\Model\Entity;
 use DateTime;
 use Strapieno\ModelUtils\Entity\DateHistoryAwareInterface;
 use Strapieno\ModelUtils\Entity\EntityInterface;
+use Strapieno\ModelUtils\Entity\PasswordAwareInterface;
 use Zend\Permissions\Acl\Role\RoleInterface;
 use Zend\Stdlib\Hydrator\HydratorAwareInterface;
 
@@ -16,7 +17,8 @@ interface UserInterface extends
     DateHistoryAwareInterface,
     HydratorAwareInterface,
     UserIndentityAwareInterface,
-    RoleInterface
+    RoleInterface,
+    PasswordAwareInterface
 {
 
     /**

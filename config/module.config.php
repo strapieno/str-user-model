@@ -18,9 +18,9 @@ return [
         'aliases' => [
             'Strapieno\User\Model\Criteria\UserCollectionCriteria'
                 => 'Strapieno\User\Model\Criteria\Mongo\UserMongoCollectionCriteria',
-            'Strapieno\User\Model\Criteria\IsolatedActiveRecordCriteria'
+            'Strapieno\Model\Criteria\IsolatedActiveRecordCriteria'
                 => 'Matryoshka\Model\Wrapper\Mongo\Criteria\Isolated\ActiveRecordCriteria',
-            'Strapieno\User\Model\Criteria\NotIsolatedActiveRecordCriteria'
+                'Strapieno\Model\Criteria\NotIsolatedActiveRecordCriteria'
                 => 'Matryoshka\Model\Wrapper\Mongo\Criteria\ActiveRecord\ActiveRecordCriteria',
             'Strapieno\Model\ResultSet\HydratingResultSet'
                 => 'Matryoshka\Model\Wrapper\Mongo\ResultSet\HydratingResultSet',
@@ -40,7 +40,7 @@ return [
     'matryoshka-objects' => [
         'User' => [
             'type' => 'Strapieno\User\Model\Entity\UserEntity',
-            'active_record_criteria' => 'Strapieno\User\Model\Criteria\NotIsolatedActiveRecordCriteria'
+            'active_record_criteria' => 'Strapieno\Model\Criteria\NotIsolatedActiveRecordCriteria'
         ],
     ],
     'matryoshka-models' => [

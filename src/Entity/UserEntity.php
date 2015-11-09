@@ -4,6 +4,7 @@ namespace Strapieno\User\Model\Entity;
 
 use Matryoshka\Model\Object\ActiveRecord\AbstractActiveRecord;
 use Strapieno\ModelUtils\Entity\DateHistoryAwareTrait;
+use Strapieno\ModelUtils\Entity\PasswordAwareTrait;
 use Strapieno\ModelUtils\Entity\RoleAwareTrait;
 use Zend\Stdlib\Hydrator\HydratorAwareTrait;
 
@@ -15,6 +16,7 @@ class UserEntity extends AbstractActiveRecord implements UserInterface
     use DateHistoryAwareTrait;
     use UserTrait;
     use RoleAwareTrait;
+    use PasswordAwareTrait;
 
     /**
      * @return mixed

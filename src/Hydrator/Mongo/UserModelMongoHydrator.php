@@ -15,10 +15,17 @@ class UserModelMongoHydrator extends DateHistoryHydrator
     public function __construct($underscoreSeparatedKeys = true)
     {
         parent::__construct($underscoreSeparatedKeys);
+        // Strategy
         $this->addStrategy('date_created', new MongoDateStrategy());
+        // Filters
         $this->filterComposite->addFilter(
             'identity',
             new MethodMatchFilter('getIdentity', true),
+            FilterComposite::CONDITION_AND
+        );
+        $this->filterComposite->addFilter(
+            'password',
+            new MethodMatchFilter('getPassword', true),
             FilterComposite::CONDITION_AND
         );
     }
