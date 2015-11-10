@@ -5,7 +5,7 @@ namespace Strapieno\User\Model\Entity;
 /**
  * Class UserIdAwareInterface
  */
-trait UserIdAwareInterface
+trait UserIdAwareTrait
 {
     /**
      * @var string
