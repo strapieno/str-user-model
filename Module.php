@@ -2,13 +2,14 @@
 namespace Strapieno\User\Model;
 
 use Zend\ModuleManager\Feature\HydratorProviderInterface;
+use Zend\ModuleManager\Feature\ValidatorProviderInterface;
 use Zend\Stdlib\ArrayUtils;
 
 
 /**
  * Class Module
  */
-class Module implements HydratorProviderInterface
+class Module implements HydratorProviderInterface, ValidatorProviderInterface
 {
     /**
      * @return array
@@ -26,6 +27,13 @@ class Module implements HydratorProviderInterface
         return include __DIR__ . '/config/hydrator.config.php';
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    public function getValidatorConfig()
+    {
+        return include __DIR__ . '/config/validator.config.php';
+    }
 
     /**
      * @return array
