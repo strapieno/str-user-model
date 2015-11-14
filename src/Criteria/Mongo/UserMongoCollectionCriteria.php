@@ -19,5 +19,4 @@ class UserMongoCollectionCriteria extends FindAllCriteria
         $this->selectionCriteria['user_name'] = (string) $userName;
         return $this;
     }
-
 }

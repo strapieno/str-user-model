@@ -16,7 +16,7 @@ class UserModelMongoHydrator extends DateHistoryHydrator
     {
         parent::__construct($underscoreSeparatedKeys);
         // Strategy
-        $this->addStrategy('date_created', new MongoDateStrategy());
+        $this->addStrategy('birth_date', new MongoDateStrategy());
         // Filters
         $this->filterComposite->addFilter(
             'identity',
