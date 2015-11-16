@@ -31,7 +31,7 @@ class UserNameAlreadyExist extends AbstractValidator implements UserModelAwareIn
         // TODO add assetion manager
         $criteria = (new UserMongoCollectionCriteria())->setUserName($value);
         /** @var ResultSetInterface $result */
-        $result  = $this->getUserModelService()tu di pu->find($criteria);
+        $result  = $this->getUserModelService()->find($criteria);
         if ($result->count() > 0) {
             $this->error(self::USER_NAME_ALREDY_EXYST);
             return false;
