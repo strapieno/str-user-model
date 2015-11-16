@@ -19,4 +19,15 @@ class UserMongoCollectionCriteria extends FindAllCriteria
         $this->selectionCriteria['user_name'] = (string) $userName;
         return $this;
     }
+
+    /***
+     * @param $email
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        // TODO add hydrator
+        $this->selectionCriteria['email'] = (string) $email;
+        return $this;
+    }
 }
