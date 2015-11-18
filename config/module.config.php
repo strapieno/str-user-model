@@ -24,6 +24,10 @@ return [
                 => 'Matryoshka\Model\Wrapper\Mongo\Criteria\ActiveRecord\ActiveRecordCriteria',
             'Strapieno\Model\ResultSet\HydratingResultSet'
                 => 'Matryoshka\Model\Wrapper\Mongo\ResultSet\HydratingResultSet',
+        ],
+        'shared' => [
+            // Do not share instance of ResultSet to avoid collisions on prototype strategies,
+            'Matryoshka\Model\Wrapper\Mongo\ResultSet\HydratingResultSet' => false,
         ]
     ],
     'mongodb' => [
