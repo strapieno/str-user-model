@@ -2,6 +2,7 @@
 namespace Strapieno\User\Model;
 
 use Zend\ModuleManager\Feature\HydratorProviderInterface;
+use Zend\ModuleManager\Feature\InputFilterProviderInterface;
 use Zend\ModuleManager\Feature\ValidatorProviderInterface;
 use Zend\Stdlib\ArrayUtils;
 
@@ -9,7 +10,7 @@ use Zend\Stdlib\ArrayUtils;
 /**
  * Class Module
  */
-class Module implements HydratorProviderInterface, ValidatorProviderInterface
+class Module implements HydratorProviderInterface,       ValidatorProviderInterface, InputFilterProviderInterface
 {
     /**
      * @return array
@@ -25,6 +26,14 @@ class Module implements HydratorProviderInterface, ValidatorProviderInterface
     public function getHydratorConfig()
     {
         return include __DIR__ . '/config/hydrator.config.php';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getInputFilterConfig()
+    {
+        return include __DIR__ . '/config/input-filter.config.php';
     }
 
     /**
