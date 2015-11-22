@@ -13,21 +13,59 @@ class CreateInputFilter extends DefaultInputFilter
     public function init()
     {
         parent::init();
-        $this->addPasswordInput();
+
+        $this->updatePasswordInput()
+            ->updateEmailInput()
+            ->updateUserNameInput()
+        ;
     }
 
     /**
      * @return $this
      */
-    protected function addPasswordInput()
+    protected function updatePasswordInput()
     {
-        $input = new Input('password');
+        if (!$this->has('password'))  {
+            // TODO exception
+        }
+
+        $input = $this->get('password');
         $input->setRequired(true);
-        // Filter
-        $filterManager = $this->getFactory()->getDefaultFilterChain()->getPluginManager();
-        $input->getFilterChain()->attach($filterManager->get('stringtrim'));
+
+        return $this;
+    }
+
+    /**
+     * @return $this
+     */
+    protected function updateEmailInput()
+    {
+        if (!$this->has('email'))  {
+             // TODO exception
+        }
+        
+        $input = $this->get('email');
+        
+        $validatorManager = $this->getFactory()->getDefaultValidatorChain()->getPluginManager();
+        $input->getValidatorChain()->attach($validatorManager->get('user-emailalreadyexist'));
+
+        return $this;
+    }
+
+    /**
+     * @return $this
+     */
+    protected function updateUserNameInput()
+    {
+        if (!$this->has('user_name'))  {
+            // TODO exception
+        }
+
+        $input = $this->get('user_name');
         // Validator
-        $this->add($input);
+        $validatorManager = $this->getFactory()->getDefaultValidatorChain()->getPluginManager();
+        $input->getValidatorChain()->attach($validatorManager->get('user-usernamealreadyexist'));
+
         return $this;
     }
 }

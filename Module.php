@@ -10,7 +10,7 @@ use Zend\Stdlib\ArrayUtils;
 /**
  * Class Module
  */
-class Module implements HydratorProviderInterface,       ValidatorProviderInterface, InputFilterProviderInterface
+class Module implements HydratorProviderInterface, ValidatorProviderInterface, InputFilterProviderInterface
 {
     /**
      * @return array

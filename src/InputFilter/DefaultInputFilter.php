@@ -17,6 +17,7 @@ class DefaultInputFilter extends InputFilter
             ->addFirstNameInput()
             ->addLastNameInput()
             ->addBirthDate()
+            ->addPasswordInput()
         ;
     }
 
@@ -29,9 +30,7 @@ class DefaultInputFilter extends InputFilter
         // Filter
         $filterManager = $this->getFactory()->getDefaultFilterChain()->getPluginManager();
         $input->getFilterChain()->attach($filterManager->get('stringtrim'));
-        // Validator
-        $validatorManager = $this->getFactory()->getDefaultValidatorChain()->getPluginManager();
-        $input->getValidatorChain()->attach($validatorManager->get('user-usernamealreadyexist'));
+
         $this->add($input);
         return $this;
     }
@@ -48,7 +47,6 @@ class DefaultInputFilter extends InputFilter
         // Validator
         $validatorManager = $this->getFactory()->getDefaultValidatorChain()->getPluginManager();
         $input->getValidatorChain()->attach($validatorManager->get('emailaddress'));
-        $input->getValidatorChain()->attach($validatorManager->get('user-emailalreadyexist'));
 
         $this->add($input);
         return $this;
@@ -98,6 +96,21 @@ class DefaultInputFilter extends InputFilter
         $validatorManager = $this->getFactory()->getDefaultValidatorChain()->getPluginManager();
         $input->getValidatorChain()->attach($validatorManager->get('date'));
 
+        $this->add($input);
+        return $this;
+    }
+
+    /**
+     * @return $this
+     */
+    protected function addPasswordInput()
+    {
+        $input = new Input('password');
+        $input->setRequired(false);
+        // Filter
+        $filterManager = $this->getFactory()->getDefaultFilterChain()->getPluginManager();
+        $input->getFilterChain()->attach($filterManager->get('stringtrim'));
+        // Validator
         $this->add($input);
         return $this;
     }
