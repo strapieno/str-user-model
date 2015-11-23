@@ -38,7 +38,7 @@ class UserMongoCollectionCriteria extends FindAllCriteria
     public function setRecoverPasswordToken($recoverPasswordToken)
     {
         // TODO add hydrator
-        $this->selectionCriteria['recover_password_oken'] = (string) $email;
+        $this->selectionCriteria['recover_password_oken'] = (string) $recoverPasswordToken;
         return $this;
     }
 }
