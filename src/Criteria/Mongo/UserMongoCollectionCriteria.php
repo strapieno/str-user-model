@@ -30,4 +30,15 @@ class UserMongoCollectionCriteria extends FindAllCriteria
         $this->selectionCriteria['email'] = (string) $email;
         return $this;
     }
+
+    /**
+     * @param $recoverPasswordToken
+     * @return $this
+     */
+    public function setRecoverPasswordToken($recoverPasswordToken)
+    {
+        // TODO add hydrator
+        $this->selectionCriteria['recover_password_oken'] = (string) $email;
+        return $this;
+    }
 }
