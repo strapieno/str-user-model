@@ -7,6 +7,7 @@ use Strapieno\ModelUtils\Entity\DateHistoryAwareTrait;
 use Strapieno\ModelUtils\Entity\PasswordAwareTrait;
 use Strapieno\ModelUtils\Entity\RercoverPasswordAwareTrait;
 use Strapieno\ModelUtils\Entity\RoleAwareTrait;
+use Strapieno\User\Model\Entity\Status\UserStatusAwareTrait;
 use Zend\Stdlib\Hydrator\HydratorAwareTrait;
 
 /**
@@ -19,6 +20,7 @@ class UserEntity extends AbstractActiveRecord implements UserInterface
     use RoleAwareTrait;
     use PasswordAwareTrait;
     use RercoverPasswordAwareTrait;
+    use UserStatusAwareTrait    ;
 
     /**
      * @return mixed

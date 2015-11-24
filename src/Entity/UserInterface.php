@@ -7,6 +7,7 @@ use Strapieno\ModelUtils\Entity\DateHistoryAwareInterface;
 use Strapieno\ModelUtils\Entity\EntityInterface;
 use Strapieno\ModelUtils\Entity\PasswordAwareInterface;
 use Strapieno\ModelUtils\Entity\RercoverPasswordAwareInterface;
+use Strapieno\User\Model\Entity\Status\UserStatusAwareInterface;
 use Zend\Permissions\Acl\Role\RoleInterface;
 use Zend\Stdlib\Hydrator\HydratorAwareInterface;
 
@@ -20,7 +21,8 @@ interface UserInterface extends
     UserIndentityAwareInterface,
     RoleInterface,
     PasswordAwareInterface,
-    RercoverPasswordAwareInterface
+    RercoverPasswordAwareInterface,
+    UserStatusAwareInterface
 {
 
     /**
