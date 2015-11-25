@@ -1,17 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: visa
- * Date: 24/11/15
- * Time: 20.15
- */
 
-namespace Strapieno\User\Model\Entity\Status;
+namespace Strapieno\User\Model\Entity\State;
 
 /**
  * Class Registered
  */
-class Registered extends AbstractUserState implements UserInterface
+class Registered extends AbstractUserState implements UserStateInterface
 {
     /**
      * @var string

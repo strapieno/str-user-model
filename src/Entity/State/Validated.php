@@ -6,12 +6,12 @@
  * Time: 20.17
  */
 
-namespace Strapieno\User\Model\Entity\Status;
+namespace Strapieno\User\Model\Entity\State;
 
 /**
  * Class Validated
  */
-class Validated extends AbstractUserState implements UserInterface
+class Validated extends AbstractUserState implements UserStateInterface
 {
     /**
      * @var string

@@ -1,10 +1,12 @@
 <?php
-namespace Strapieno\User\Model\Entity\Status;
+namespace Strapieno\User\Model\Entity\State;
+
+use Strapieno\ModelUtils\Entity\StateInterface;
 
 /**
  * Interface UserIdAwareInterface
  */
-interface UserInterface
+interface UserStateInterface extends StateInterface
 {
     /**
      * @return UserInterface
@@ -20,15 +22,4 @@ interface UserInterface
      * @return UserInterface
      */
     public function blocked();
-
-    /**
-     * @return string
-     */
-    public function getName();
-
-    /**
-     * @param $name
-     * @return mixed
-     */
-    public function setName($name);
 }

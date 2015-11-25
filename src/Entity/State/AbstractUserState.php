@@ -1,6 +1,6 @@
 <?php
 
-namespace Strapieno\User\Model\Entity\Status;
+namespace Strapieno\User\Model\Entity\State;
 
 use Strapieno\User\Model\Entity\Status\Exception;
 use BadMethodCallException;
@@ -8,7 +8,7 @@ use BadMethodCallException;
 /**
  * Class AbstractUserState
  */
-abstract class AbstractUserState implements UserInterface
+abstract class AbstractUserState implements UserStateInterface
 {
     /**
      * @var string
@@ -48,15 +48,5 @@ abstract class AbstractUserState implements UserInterface
             throw new BadMethodCallException();
         }
         return $this->name;
-    }
-
-    /**
-     * @param $name
-     * @return mixed
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-        return $this;
     }
 }

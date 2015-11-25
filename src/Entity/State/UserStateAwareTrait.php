@@ -6,33 +6,33 @@
  * Time: 20.29
  */
 
-namespace Strapieno\User\Model\Entity\Status;
+namespace Strapieno\User\Model\Entity\State;
 
 /**
  * Class UserStatusAwareTrait
  */
-trait UserStatusAwareTrait
+trait UserStateAwareTrait
 {
     /**
      * @var UserInterface
      */
-    protected $status = new Registered();
+    protected $state;
 
     /**
      * @return UserInterface
      */
-    public function getStatus()
+    public function getState()
     {
-        return $this->status;
+        return $this->state;
     }
 
     /**
-     * @param UserInterface $status
+     * @param UserInterface $state
      * @return $this
      */
-    public function setStatus(UserInterface $status)
+    public function setState(UserStateInterface $state)
     {
-        $this->status = $status;
+        $this->state = $state;
         return $this;
     }
 }

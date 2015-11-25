@@ -1,6 +1,6 @@
 <?php
 
-namespace Strapieno\User\Model\Entity\Status\Exception;
+namespace Strapieno\User\Model\Entity\State\Exception;
 
 use LogicException;
 
@@ -8,6 +8,4 @@ use LogicException;
  * Class IllegalStateTransitionException
  */
 class IllegalStateTransitionException extends LogicException
-{
-
-}
+{}

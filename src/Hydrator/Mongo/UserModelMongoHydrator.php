@@ -4,6 +4,8 @@ namespace Strapieno\User\Model\Hydrator\Mongo;
 
 use Matryoshka\Model\Wrapper\Mongo\Hydrator\Strategy\MongoDateStrategy;
 use Strapieno\ModelUtils\Hydrator\Mongo\DateHistoryHydrator;
+use Strapieno\User\Model\Entity\State\UserStateManager;
+use Strapieno\User\Model\Entity\State\UserStateStrategy;
 use Zend\Stdlib\Hydrator\Filter\FilterComposite;
 use Zend\Stdlib\Hydrator\Filter\MethodMatchFilter;
 
@@ -17,6 +19,8 @@ class UserModelMongoHydrator extends DateHistoryHydrator
         parent::__construct($underscoreSeparatedKeys);
         // Strategy
         $this->addStrategy('birth_date', new MongoDateStrategy());
+        $strategy = (new UserStateStrategy())->setUserStateManager(new UserStateManager());
+        $this->addStrategy('status', $strategy);
         // Filters
         $this->filterComposite->addFilter(
             'identity',
