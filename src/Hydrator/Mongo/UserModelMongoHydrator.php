@@ -19,10 +19,7 @@ class UserModelMongoHydrator extends DateHistoryHydrator
         parent::__construct($underscoreSeparatedKeys);
         // Strategy
         $this->addStrategy('birth_date', new MongoDateStrategy());
-        $strategy = new UserStateStrategy();
-        $strategy->setUserStateManager(new UserStateManager())
-            ->setFirstStateName('registered');
-        $this->addStrategy('status', $strategy);
+        $this->addStateStrategy();
         // Filters
         $this->filterComposite->addFilter(
             'identity',
@@ -34,5 +31,18 @@ class UserModelMongoHydrator extends DateHistoryHydrator
             new MethodMatchFilter('getPassword', true),
             FilterComposite::CONDITION_AND
         );
+    }
+
+    /**
+     * TODO config the strategy in service manager
+     * @return $this
+     */
+    protected function addStateStrategy()
+    {
+        $strategy = new UserStateStrategy();
+        $strategy->setUserStateManager(new UserStateManager())
+            ->setFirstStateName('registered');
+        $this->addStrategy('state', $strategy);
+        return $this;
     }
 }

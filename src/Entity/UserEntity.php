@@ -7,6 +7,7 @@ use Strapieno\ModelUtils\Entity\DateHistoryAwareTrait;
 use Strapieno\ModelUtils\Entity\PasswordAwareTrait;
 use Strapieno\ModelUtils\Entity\RercoverPasswordAwareTrait;
 use Strapieno\ModelUtils\Entity\RoleAwareTrait;
+use Strapieno\User\Model\Entity\State\UserStateAwareTrait;
 use Strapieno\User\Model\Entity\Status\UserStatusAwareTrait;
 
 /**
@@ -19,7 +20,7 @@ class UserEntity extends AbstractActiveRecord implements UserInterface
     use RoleAwareTrait;
     use PasswordAwareTrait;
     use RercoverPasswordAwareTrait;
-    use UserStatusAwareTrait    ;
+    use UserStateAwareTrait;
 
     /**
      * @return mixed
