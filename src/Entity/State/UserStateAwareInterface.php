@@ -16,5 +16,5 @@ interface UserStateAwareInterface
      * @param UserInterface $state
      * @return $this
      */
-    public function setState(UserInterface $state);
+    public function setState(UserStateInterface $state);
 }

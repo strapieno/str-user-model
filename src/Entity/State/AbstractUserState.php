@@ -44,7 +44,7 @@ abstract class AbstractUserState implements UserStateInterface
      */
     public function getName()
     {
-        if (!$this->getName()) {
+        if (!$this->name) {
             throw new BadMethodCallException();
         }
         return $this->name;
