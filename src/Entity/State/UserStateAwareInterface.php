@@ -5,7 +5,7 @@ namespace Strapieno\User\Model\Entity\State;
 /**
  * Interface UserStatusAwareInterface
  */
-interface UserStateAwareInterface
+interface UserStateAwareInterface extends UserStateInterface
 {
     /**
      * @return UserInterface

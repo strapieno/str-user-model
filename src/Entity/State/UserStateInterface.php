@@ -4,22 +4,22 @@ namespace Strapieno\User\Model\Entity\State;
 use Strapieno\ModelUtils\Entity\StateInterface;
 
 /**
- * Interface UserIdAwareInterface
+ * Interface UserStateInterface
  */
-interface UserStateInterface extends StateInterface
+interface UserStateInterface
 {
     /**
-     * @return UserInterface
+     * @return UserStateInterface
      */
     public function registered();
 
     /**
-     * @return UserInterface
+     * @return UserStateInterface
      */
     public function validated();
 
     /**
-     * @return UserInterface
+     * @return UserStateInterface
      */
     public function blocked();
 }

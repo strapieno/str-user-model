@@ -14,12 +14,12 @@ namespace Strapieno\User\Model\Entity\State;
 trait UserStateAwareTrait
 {
     /**
-     * @var UserInterface
+     * @var UserStateInterface
      */
     protected $state;
 
     /**
-     * @return UserInterface
+     * @return UserStateInterface|null
      */
     public function getState()
     {
@@ -27,12 +27,36 @@ trait UserStateAwareTrait
     }
 
     /**
-     * @param UserInterface $state
+     * @param UserStateInterface $state
      * @return $this
      */
     public function setState(UserStateInterface $state)
     {
         $this->state = $state;
         return $this;
+    }
+
+    /**
+     * @return UserInterface
+     */
+    public function registered()
+    {
+        $this->setState($this->state->registered());
+    }
+
+    /**
+     * @return UserInterface
+     */
+    public function validated()
+    {
+        $this->setState($this->state->validated());
+    }
+
+    /**
+     * @return UserInterface
+     */
+    public function blocked()
+    {
+        $this->setState($this->state->blocked());
     }
 }
