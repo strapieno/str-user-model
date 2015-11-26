@@ -4,6 +4,7 @@ namespace Strapieno\User\Model\Entity;
 
 use Matryoshka\Model\Object\ActiveRecord\AbstractActiveRecord;
 use Strapieno\ModelUtils\Entity\DateHistoryAwareTrait;
+use Strapieno\ModelUtils\Entity\IdentityExistAwareTrait;
 use Strapieno\ModelUtils\Entity\PasswordAwareTrait;
 use Strapieno\ModelUtils\Entity\RercoverPasswordAwareTrait;
 use Strapieno\ModelUtils\Entity\RoleAwareTrait;
@@ -21,6 +22,7 @@ class UserEntity extends AbstractActiveRecord implements UserInterface
     use PasswordAwareTrait;
     use RercoverPasswordAwareTrait;
     use UserStateAwareTrait;
+    use IdentityExistAwareTrait;
 
     /**
      * @return mixed
