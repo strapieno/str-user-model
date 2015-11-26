@@ -2,10 +2,6 @@
 
 namespace Strapieno\User\Model\Entity\State;
 
-use Strapieno\User\Model\Entity\State\Exception;
-use Zend\ServiceManager\AbstractPluginManager;
-use Zend\ServiceManager\Exception;
-
 /**
  * Interface UserStateManagerAwareInterface
  */

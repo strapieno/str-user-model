@@ -8,7 +8,6 @@ use Strapieno\ModelUtils\Entity\PasswordAwareTrait;
 use Strapieno\ModelUtils\Entity\RercoverPasswordAwareTrait;
 use Strapieno\ModelUtils\Entity\RoleAwareTrait;
 use Strapieno\User\Model\Entity\Status\UserStatusAwareTrait;
-use Zend\Stdlib\Hydrator\HydratorAwareTrait;
 
 /**
  * Class UserEntity

@@ -2,8 +2,6 @@
 
 namespace Strapieno\User\Model\InputFilter;
 
-use Zend\InputFilter\Input;
-
 /**
  * Class CreateInputFilter
  */
