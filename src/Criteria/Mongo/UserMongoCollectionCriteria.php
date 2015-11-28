@@ -41,4 +41,15 @@ class UserMongoCollectionCriteria extends FindAllCriteria
         $this->selectionCriteria['recover_password_token'] = (string) $recoverPasswordToken;
         return $this;
     }
+
+    /**
+     * @param $identityExistToken
+     * @return $this
+     */
+    public function setIdentityExistToken($identityExistToken)
+    {
+        // TODO rename  $identityExistToken
+        $this->selectionCriteria['identity_exist_token'] = (string) $identityExistToken;
+        return $this;
+    }
 }
