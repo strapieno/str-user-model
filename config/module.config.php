@@ -56,7 +56,7 @@ return [
             'paginator_criteria' => 'Strapieno\User\Model\Criteria\UserCollectionCriteria',
             'hydrator' => 'Strapieno\User\Model\Hydrator\UserModelMongoHydrator',
             'listeners' => [
-                'Strapieno\Utils\Listener\DateAwareListener',
+                'Strapieno\Utils\Model\Listener\DateAwareListener',
             ],
         ],
     ],
