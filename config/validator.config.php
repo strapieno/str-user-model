@@ -1,7 +1,7 @@
 <?php
 return [
     'abstract_factories' => [
-        'Strapieno\ModelUtils\Validator\AbstractArrayValidator'
+        'Strapieno\Utils\Validator\AbstractArrayValidator'
     ],
     'initializers' => [
         'Strapieno\User\Model\UserModelInizializer'
