@@ -3,9 +3,9 @@
 namespace Strapieno\User\Model\Hydrator\Mongo;
 
 use Matryoshka\Model\Wrapper\Mongo\Hydrator\Strategy\MongoDateStrategy;
-use Strapieno\ModelUtils\Hydrator\Mongo\DateHistoryHydrator;
 use Strapieno\User\Model\Entity\State\UserStateManager;
 use Strapieno\User\Model\Entity\State\UserStateStrategy;
+use Strapieno\Utils\Hydrator\Mongo\DateHistoryHydrator;
 use Zend\Stdlib\Hydrator\Filter\FilterComposite;
 use Zend\Stdlib\Hydrator\Filter\MethodMatchFilter;
 

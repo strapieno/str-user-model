@@ -3,13 +3,13 @@
 namespace Strapieno\User\Model\Entity;
 
 use Matryoshka\Model\Object\ActiveRecord\AbstractActiveRecord;
-use Strapieno\ModelUtils\Entity\DateHistoryAwareTrait;
-use Strapieno\ModelUtils\Entity\IdentityExistAwareTrait;
-use Strapieno\ModelUtils\Entity\PasswordAwareTrait;
-use Strapieno\ModelUtils\Entity\RercoverPasswordAwareTrait;
-use Strapieno\ModelUtils\Entity\RoleAwareTrait;
 use Strapieno\User\Model\Entity\State\UserStateAwareTrait;
 use Strapieno\User\Model\Entity\Status\UserStatusAwareTrait;
+use Strapieno\Utils\Model\Entity\DateHistoryAwareTrait;
+use Strapieno\Utils\Model\Entity\IdentityExistAwareTrait;
+use Strapieno\Utils\Model\Entity\PasswordAwareTrait;
+use Strapieno\Utils\Model\Entity\RercoverPasswordAwareTrait;
+use Strapieno\Utils\Model\Entity\RoleAwareTrait;
 
 /**
  * Class UserEntity

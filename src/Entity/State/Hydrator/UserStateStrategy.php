@@ -2,7 +2,7 @@
 
 namespace Strapieno\User\Model\Entity\State;
 
-use Strapieno\ModelUtils\Hydrator\Strategy\StateStrategy;
+use Strapieno\Utils\Hydrator\Strategy\StateStrategy;
 
 /**
  * Class StateStrategy

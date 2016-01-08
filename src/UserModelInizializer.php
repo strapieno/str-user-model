@@ -2,7 +2,7 @@
 
 namespace Strapieno\User\Model;
 
-use Strapieno\ModelUtils\Inizilizer\AbstractModelServiceInizilizer;
+use Strapieno\Utils\Inizilizer\AbstractModelServiceInizilizer;
 
 class UserModelInizializer extends AbstractModelServiceInizilizer
 {

@@ -3,9 +3,8 @@
 namespace Strapieno\User\Model\Entity\State;
 
 use BadMethodCallException;
-use Strapieno\ModelUtils\Entity\StateInterface;
-use Strapieno\User\Model\Entity\Status\Exception;
 use Strapieno\User\Model\Entity\State\Exception;
+use Strapieno\Utils\Model\Entity\StateInterface;
 
 /**
  * Class AbstractUserState

@@ -1,7 +1,6 @@
 <?php
-namespace Strapieno\User\Model\Entity\State;
 
-use Strapieno\ModelUtils\Entity\StateInterface;
+namespace Strapieno\User\Model\Entity\State;
 
 /**
  * Interface UserStateInterface

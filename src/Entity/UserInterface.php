@@ -3,14 +3,15 @@
 namespace Strapieno\User\Model\Entity;
 
 use DateTime;
-use Strapieno\ModelUtils\Entity\DateHistoryAwareInterface;
-use Strapieno\ModelUtils\Entity\EntityInterface;
-use Strapieno\ModelUtils\Entity\IdentityExistAwareInterface;
-use Strapieno\ModelUtils\Entity\PasswordAwareInterface;
-use Strapieno\ModelUtils\Entity\RercoverPasswordAwareInterface;
 use Strapieno\User\Model\Entity\State\UserStateAwareInterface;
+use Strapieno\Utils\Model\Entity\DateHistoryAwareInterface;
+use Strapieno\Utils\Model\Entity\EntityInterface;
+use Strapieno\Utils\Model\Entity\IdentityExistAwareInterface;
+use Strapieno\Utils\Model\Entity\PasswordAwareInterface;
+use Strapieno\Utils\Model\Entity\RercoverPasswordAwareInterface;
 use Zend\Permissions\Acl\Role\RoleInterface;
 use Zend\Stdlib\Hydrator\HydratorAwareInterface;
+
 
 /**
  * Class UserInterface
