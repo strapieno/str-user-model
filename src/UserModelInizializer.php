@@ -1,5 +1,4 @@
 <?php
-
 namespace Strapieno\User\Model;
 
 use Strapieno\Utils\Inizilizer\AbstractModelServiceInizilizer;
