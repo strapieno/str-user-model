@@ -11,7 +11,7 @@ return [
         'Strapieno\User\Model\Validator\EmailAlreadyExist' => 'Strapieno\User\Model\Validator\EmailAlreadyExist'
     ],
     'aliases' => [
-        'user-usernamealreadyexist' => 'Strapieno\User\Model\Validator\UserNameAlreadyExist',
-        'user-emailalreadyexist' => 'Strapieno\User\Model\Validator\EmailAlreadyExist'
+        'userusernamealreadyexist' => 'Strapieno\User\Model\Validator\UserNameAlreadyExist',
+        'useremailalreadyexist' => 'Strapieno\User\Model\Validator\EmailAlreadyExist'
     ]
 ];

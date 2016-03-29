@@ -7,7 +7,6 @@ namespace Strapieno\User\Model\InputFilter;
  */
 class CreateInputFilter extends DefaultInputFilter
 {
-{
     public function init()
     {
         parent::init();

@@ -10,7 +10,7 @@ use Zend\Stdlib\ArrayUtils;
 /**
  * Class Module
  */
-class Module implements HydratorProviderInterface, ValidatorProviderInterface, InputFilterProviderInterface
+class Module implements HydratorProviderInterface, ValidatorProviderInterface
 {
     /**
      * @return array
@@ -26,14 +26,6 @@ class Module implements HydratorProviderInterface, ValidatorProviderInterface, I
     public function getHydratorConfig()
     {
         return include __DIR__ . '/config/hydrator.config.php';
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getInputFilterConfig()
-    {
-        return include __DIR__ . '/config/input-filter.config.php';
     }
 
     /**

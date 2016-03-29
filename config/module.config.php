@@ -60,4 +60,68 @@ return [
             ],
         ],
     ],
+    'input_filter_specs' => [
+        'Strapieno\User\Model\InputFilter\DefaultInputFilter' => [
+            'user_name' => [
+                'name' => 'user_name',
+                'filters' => [
+                    'stringtrim' => [
+                        'name' => 'stringtrim',
+                    ]
+                ]
+            ],
+            'email' => [
+                'name' => 'email',
+                'filters' => [
+                    'stringtrim' =>  [
+                        'name' => 'stringtrim',
+                    ]
+                ],
+                'validators' => [
+                    'emailaddress' => [
+                        'name' => 'emailaddress',
+                        'break_chain_on_failure' => true
+                    ]
+                ]
+            ],
+            'first_name' => [
+                'name' => 'first_name',
+                'filters' => [
+                    'stringtrim' => [
+                        'name' => 'stringtrim',
+                    ]
+                ],
+            ],
+            'last_name' => [
+                'name' => 'last_name',
+                'filters' => [
+                    'stringtrim' => [
+                        'name' => 'stringtrim',
+                    ]
+                ],
+            ],
+            'birth_date' => [
+                'name' => 'birth_date',
+                'filters' => [
+                    'stringtrim' => [
+                        'name' => 'stringtrim',
+                    ]
+                ],
+                'validators' => [
+                    'date' => [
+                        'name' => 'date',
+                        'break_chain_on_failure' => true
+                    ]
+                ]
+            ],
+            'password' => [
+                'name' => 'password',
+                'filters' => [
+                    'stringtrim' => [
+                        'name' => 'stringtrim',
+                    ]
+                ],
+            ]
+        ]
+    ]
 ];
