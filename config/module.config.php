@@ -60,7 +60,7 @@ return [
             ],
         ],
     ],
-    'input_filter_specs' => [
+    'str_input_filter_specs' => [
         'Strapieno\User\Model\InputFilter\DefaultInputFilter' => [
             'user_name' => [
                 'name' => 'user_name',
