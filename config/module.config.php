@@ -64,6 +64,8 @@ return [
         'Strapieno\User\Model\InputFilter\DefaultInputFilter' => [
             'user_name' => [
                 'name' => 'user_name',
+                'require' => false,
+                'allow_empty' => true,
                 'filters' => [
                     'stringtrim' => [
                         'name' => 'stringtrim',
@@ -72,6 +74,8 @@ return [
             ],
             'email' => [
                 'name' => 'email',
+                'require' => false,
+                'allow_empty' => true,
                 'filters' => [
                     'stringtrim' =>  [
                         'name' => 'stringtrim',
@@ -86,6 +90,8 @@ return [
             ],
             'first_name' => [
                 'name' => 'first_name',
+                'require' => false,
+                'allow_empty' => true,
                 'filters' => [
                     'stringtrim' => [
                         'name' => 'stringtrim',
@@ -94,6 +100,8 @@ return [
             ],
             'last_name' => [
                 'name' => 'last_name',
+                'require' => false,
+                'allow_empty' => true,
                 'filters' => [
                     'stringtrim' => [
                         'name' => 'stringtrim',
@@ -102,6 +110,8 @@ return [
             ],
             'birth_date' => [
                 'name' => 'birth_date',
+                'require' => false,
+                'allow_empty' => true,
                 'filters' => [
                     'stringtrim' => [
                         'name' => 'stringtrim',
@@ -116,6 +126,8 @@ return [
             ],
             'password' => [
                 'name' => 'password',
+                'require' => false,
+                'allow_empty' => true,
                 'filters' => [
                     'stringtrim' => [
                         'name' => 'stringtrim',
