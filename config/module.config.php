@@ -60,6 +60,11 @@ return [
             ],
         ],
     ],
+    'strapieno-array-validators' => [
+        'RolesTypesValidator' => [
+            'name_key_array_config' => 'RolesTypes'
+        ]
+    ],
     'strapieno_input_filter_specs' => [
         'Strapieno\User\Model\InputFilter\DefaultInputFilter' => [
             'user_name' => [
@@ -133,6 +138,22 @@ return [
                         'name' => 'stringtrim',
                     ]
                 ],
+            ],
+            'role_id' => [
+                'name' => 'role_id',
+                'require' => false,
+                'allow_empty' => true,
+                'filters' => [
+                    'stringtrim' => [
+                        'name' => 'stringtrim',
+                    ]
+                ],
+                'validators' => [
+                    'RolesTypesValidator' => [
+                        'name' => 'RolesTypesValidator',
+                        'break_chain_on_failure' => true
+                    ]
+                ]
             ]
         ]
     ]
