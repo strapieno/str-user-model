@@ -10,6 +10,8 @@
     "zendframework/zend-servicemanager": "2.5.*",
     "zendframework/zend-permissions-acl": "2.5.*",
     "zendframework/zend-inputfilter": "2.5.*",
+    "zendframework/zend-validator": "2.5.*",
+    "zendframework/zend-filter": "2.5.*",
     "matryoshka-model/matryoshka": "0.8.*@dev",
     "matryoshka-model/mongo-wrapper": "0.8.*@dev",
     "matryoshka-model/zf2-matryoshka-module": "0.8.*@dev",

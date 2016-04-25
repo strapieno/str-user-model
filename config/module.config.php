@@ -120,6 +120,9 @@ return [
                 'filters' => [
                     'stringtrim' => [
                         'name' => 'stringtrim',
+                    ],
+                    'tonull' => [
+                        'name' => 'tonull'
                     ]
                 ],
                 'validators' => [
