@@ -37,5 +37,6 @@
       "email": "antonino.visalli@gmail.com",
       "homepage": "http://github.com/visa4"
     }
-  ]
+  ],
+  "minimum-stability": "dev"
 }
