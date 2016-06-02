@@ -1,9 +1,9 @@
 <?php
 namespace Strapieno\User\Model;
 
-use Strapieno\Utils\Inizilizer\AbstractModelServiceInizilizer;
+use Strapieno\Utils\Initializer\AbstractModelServiceInitializer;
 
-class UserModelInizializer extends AbstractModelServiceInizilizer
+class UserModelInitializer extends AbstractModelServiceInitializer
 {
     const SERVICE_NAME = UserModelService::class;
     const INSTANCE_CLASS = UserModelAwareInterface::class;

@@ -4,7 +4,7 @@ return [
         'Strapieno\Utils\Validator\AbstractArrayValidator'
     ],
     'initializers' => [
-        'Strapieno\User\Model\UserModelInizializer'
+        'Strapieno\User\Model\UserModelInitializer'
     ],
     'invokables' => [
         'Strapieno\User\Model\Validator\UserNameAlreadyExist' => 'Strapieno\User\Model\Validator\UserNameAlreadyExist',
