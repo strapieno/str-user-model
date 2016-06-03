@@ -30,6 +30,29 @@ return [
             'Matryoshka\Model\Wrapper\Mongo\ResultSet\HydratingResultSet' => false,
         ]
     ],
+    'controllers' => [
+        'invokables' => [
+            'Strapieno\User\Model\Controller\CrudController' => 'Strapieno\User\Model\Controller\CrudController'
+        ],
+        'initializers' => [
+            'Strapieno\User\Model\UserModelInitializer'
+        ],
+    ],
+    'console' => [
+        'router' => [
+            'routes' => [
+                'add-client' => [
+                    'options' => [
+                        'route'    => 'add-user --username= --email= [--verbose|-v]',
+                        'defaults' => [
+                            'controller' => 'Strapieno\User\Model\Controller\CrudController',
+                            'action'     => 'add'
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ],
     'mongodb' => [
         'Mongo\Db' => [
             'database' => 'strapieno',

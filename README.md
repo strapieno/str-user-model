@@ -1,5 +1,8 @@
 Strapieno user model
----
+--------------------
+
+[![Packagist](https://img.shields.io/packagist/dt/strapieno/str-user-model.svg?maxAge=2592000)](https://packagist.org/packages/strapieno/str-user-model) [![Travis](https://img.shields.io/travis/strapieno/str-user-model/develop.svg?maxAge=2592000)](https://travis-ci.org/strapieno/str-user-model) [![Coveralls](https://img.shields.io/coveralls/strapieno/str-user-model/develop.svg?style=flat-square)](https://coveralls.io/github/strapieno/str-user-model) 
+
 > Domain model that rapresent an User. 
 
 ## Dependencies
