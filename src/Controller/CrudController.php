@@ -29,7 +29,7 @@ class CrudController extends AbstractActionController implements UserModelAwareI
         $verbose = $request->getParam('verbose') || $request->getParam('v');
 
         $inputFilter = $this->getInputFilter();
-        $data['user_name'] = $request->getParam('clientId', null);
+        $data['user_name'] = $request->getParam('username', null);
         $data['email'] = $request->getParam('email', null);
 
         $data['password'] = Line::prompt(
@@ -58,7 +58,7 @@ class CrudController extends AbstractActionController implements UserModelAwareI
 
         if ($verbose) {
             Console::getInstance()->writeLine(
-                'Client saved',
+                'User saved',
                 ColorInterface::GREEN
             );
         }
