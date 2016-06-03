@@ -41,7 +41,7 @@ return [
     'console' => [
         'router' => [
             'routes' => [
-                'add-client' => [
+                'add-user' => [
                     'options' => [
                         'route'    => 'add-user --username= --email= [--verbose|-v]',
                         'defaults' => [
