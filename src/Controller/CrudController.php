@@ -55,7 +55,7 @@ class CrudController extends AbstractActionController implements UserModelAwareI
         $entity->setModel($this->getUserModelService());
         $this->getUserModelService()->getHydrator()->hydrate($inputFilter->getValues(), $entity);
         $entity->save();
-        
+
         if ($verbose) {
             Console::getInstance()->writeLine(
                 'Client saved',
