@@ -1,6 +1,8 @@
 <?php
 namespace Strapieno\User\Model;
 
+use Zend\Console\Adapter\AdapterInterface;
+use Zend\ModuleManager\Feature\ConsoleUsageProviderInterface;
 use Zend\ModuleManager\Feature\HydratorProviderInterface;
 use Zend\ModuleManager\Feature\InputFilterProviderInterface;
 use Zend\ModuleManager\Feature\ValidatorProviderInterface;
@@ -10,7 +12,7 @@ use Zend\Stdlib\ArrayUtils;
 /**
  * Class Module
  */
-class Module implements HydratorProviderInterface, ValidatorProviderInterface
+class Module implements HydratorProviderInterface, ValidatorProviderInterface, ConsoleUsageProviderInterface
 {
     /**
      * @return array
@@ -47,6 +49,18 @@ class Module implements HydratorProviderInterface, ValidatorProviderInterface
                     __NAMESPACE__ => __DIR__ . '/src/',
                 ],
             ],
+        ];
+    }
+
+    public function getConsoleUsage(AdapterInterface $console)
+    {
+        return [
+            // Describe available commands
+            'route'    => 'add-user --username= --email= [--verbose|-v]',
+            // Describe expected parameters
+            [ '--username', 'Username of the user'],
+            [ '--email', 'Email of the user'],
+            [ '--verbose|-v', '(optional) turn on verbose mode']
         ];
     }
 }

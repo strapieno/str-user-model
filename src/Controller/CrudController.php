@@ -29,8 +29,8 @@ class CrudController extends AbstractActionController implements UserModelAwareI
         $verbose = $request->getParam('verbose') || $request->getParam('v');
 
         $inputFilter = $this->getInputFilter();
-        $data['client_id'] = $request->getParam('clientId', null);
-        $data['type'] = $request->getParam('type', null);
+        $data['user_name'] = $request->getParam('clientId', null);
+        $data['email'] = $request->getParam('email', null);
 
         $data['password'] = Line::prompt(
             'Password : ',
@@ -42,10 +42,6 @@ class CrudController extends AbstractActionController implements UserModelAwareI
             true
         );
 
-        /** @var $user UserEntity */
-        $user = $this->getServiceLocator()->get(ObjectManager::class)->get('User');
-        $user->setModel($this->getUserModelService());
-
         $inputFilter->setData($data);
 
         if (!$inputFilter->isValid()) {
@@ -53,6 +49,20 @@ class CrudController extends AbstractActionController implements UserModelAwareI
             $this->showMessages($inputFilter->getMessages());
             return 0;
         }
+
+        /** @var $entity UserEntity */
+        $entity = $this->getServiceLocator()->get(ObjectManager::class)->get('User');
+        $entity->setModel($this->getUserModelService());
+        $this->getUserModelService()->getHydrator()->hydrate($inputFilter->getValues(), $entity);
+        $entity->save();
+        
+        if ($verbose) {
+            Console::getInstance()->writeLine(
+                'Client saved',
+                ColorInterface::GREEN
+            );
+        }
+        return 1;
     }
 
     public function checkConsoleRequest()
@@ -76,10 +86,10 @@ class CrudController extends AbstractActionController implements UserModelAwareI
         $vm = $this->getServiceLocator()
             ->get('ValidatorManager');
 
-        $input = $inputFilter->get('username');
+        $input = $inputFilter->get('user_name');
         $input->setRequired(true);
         $input->getValidatorChain()->attach(
-            $vm->get('userusernamealreadyexist', ['token' => 'password'])
+            $vm->get('userusernamealreadyexist')
         );
 
         $input = $inputFilter->get('email');
