@@ -8,10 +8,12 @@ return [
     ],
     'invokables' => [
         'Strapieno\User\Model\Validator\UserNameAlreadyExist' => 'Strapieno\User\Model\Validator\UserNameAlreadyExist',
-        'Strapieno\User\Model\Validator\EmailAlreadyExist' => 'Strapieno\User\Model\Validator\EmailAlreadyExist'
+        'Strapieno\User\Model\Validator\EmailAlreadyExist' => 'Strapieno\User\Model\Validator\EmailAlreadyExist',
+        'Strapieno\User\Model\Validator\EntityExist' => 'Strapieno\User\Model\Validator\EntityExist'
     ],
     'aliases' => [
         'userusernamealreadyexist' => 'Strapieno\User\Model\Validator\UserNameAlreadyExist',
-        'useremailalreadyexist' => 'Strapieno\User\Model\Validator\EmailAlreadyExist'
+        'useremailalreadyexist' => 'Strapieno\User\Model\Validator\EmailAlreadyExist',
+        'user-entityexist' => 'Strapieno\User\Model\Validator\EntityExist'
     ]
 ];
