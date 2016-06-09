@@ -1,5 +1,4 @@
 <?php
-
 namespace Strapieno\User\Model\Entity\State;
 
 use BadMethodCallException;
