@@ -43,7 +43,7 @@ return [
             'routes' => [
                 'add-user' => [
                     'options' => [
-                        'route'    => 'add-user --username= --email= [--verbose|-v]',
+                        'route'    => 'add-user --username= --email= --role=  [--verbose|-v]',
                         'defaults' => [
                             'controller' => 'Strapieno\User\Model\Controller\CrudController',
                             'action'     => 'add'

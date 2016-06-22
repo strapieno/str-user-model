@@ -56,7 +56,7 @@ class Module implements HydratorProviderInterface, ValidatorProviderInterface, C
     {
         return [
             // Describe available commands
-            'add-user --username= --email= [--verbose|-v]' => 'Add user entity',
+            'add-user --username= --email= --role= [--verbose|-v]' => 'Add user entity',
             // Describe expected parameters
             [ '--username', 'Username of the user'],
             [ '--email', 'Email of the user'],

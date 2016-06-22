@@ -8,6 +8,7 @@ use Strapieno\User\Model\UserModelAwareTrait;
 use Zend\Console\ColorInterface;
 use Zend\Console\Console;
 use Zend\Console\Prompt\Line;
+use Zend\Console\Prompt\Select;
 use Zend\Console\Request;
 use Zend\InputFilter\Input;
 use Zend\InputFilter\InputFilter;
@@ -23,6 +24,7 @@ class CrudController extends AbstractActionController implements UserModelAwareI
     public function addAction()
     {
         $this->checkConsoleRequest();
+        $config = $this->getServiceLocator()->get('Config');
 
         /** @var $request Request */
         $request = $this->getRequest();
@@ -31,6 +33,24 @@ class CrudController extends AbstractActionController implements UserModelAwareI
         $inputFilter = $this->getInputFilter();
         $data['user_name'] = $request->getParam('username', null);
         $data['email'] = $request->getParam('email', null);
+        $data['role'] = $request->getParam('role', null);
+
+        if (!isset($config['UserRoleTypes']) || !is_array($config['UserRoleTypes']) || empty($config['UserRoleTypes'])) {
+
+            Console::getInstance()->writeLine(
+                'UserRoleTypes not config',
+                ColorInterface::RED
+            );
+            return 0;
+        }
+
+        $roles = $config['UserRoleTypes'];
+        $data['role_id'] = $roles[Select::prompt(
+            'Select role',
+            $roles,
+            false,
+            true
+        )];
 
         $data['password'] = Line::prompt(
             'Password : ',
