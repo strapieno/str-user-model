@@ -83,9 +83,12 @@ return [
             ],
         ],
     ],
+    'UserRoleTypes' => [
+        'God'
+    ],
     'strapieno-array-validators' => [
         'RolesTypesValidator' => [
-            'name_key_array_config' => 'RolesTypes'
+            'name_key_array_config' => 'UserRoleTypes'
         ]
     ],
     'strapieno_input_filter_specs' => [
