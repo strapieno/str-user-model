@@ -33,7 +33,6 @@ class CrudController extends AbstractActionController implements UserModelAwareI
         $inputFilter = $this->getInputFilter();
         $data['user_name'] = $request->getParam('username', null);
         $data['email'] = $request->getParam('email', null);
-        $data['role'] = $request->getParam('role', null);
 
         if (!isset($config['UserRoleTypes']) || !is_array($config['UserRoleTypes']) || empty($config['UserRoleTypes'])) {
 
