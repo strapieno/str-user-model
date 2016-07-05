@@ -10,11 +10,17 @@ use Zend\Validator\AbstractValidator;
 /**
  * Class UserNameAlreadyExist
  */
-class EmailAlreadyExist extends AbstractValidator implements UserModelAwareInterface
+class EmailUnique extends AbstractValidator implements UserModelAwareInterface
 {
     use UserModelAwareTrait;
 
     const EMAIL_ALREDY_EXYST = 'emailAlreadyExist';
+    const EMAIL_MORE_THAN_ONE = 'emailMoreThanOne';
+
+    /**
+     * @var bool
+     */
+    protected $excludeValue = false;
 
     /**
      * @var array
@@ -32,10 +38,31 @@ class EmailAlreadyExist extends AbstractValidator implements UserModelAwareInter
         $criteria = (new UserMongoCollectionCriteria())->setEmail($value);
         /** @var ResultSetInterface $result */
         $result  = $this->getUserModelService()->find($criteria);
-        if ($result->count() > 0) {
+        if ($this->excludeValue && $result->count() > 0) {
             $this->error(self::EMAIL_ALREDY_EXYST);
+            return false;
+        } else if (!$this->excludeValue && $result->count() > 1 ) {
+            $this->error(self::EMAIL_MORE_THAN_ONE);
             return false;
         }
         return true;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isExcludeValue()
+    {
+        return $this->excludeValue;
+    }
+
+    /**
+     * @param boolean $excludeValue
+     * @return $this
+     */
+    public function setExcludeValue($excludeValue)
+    {
+        $this->excludeValue = $excludeValue;
+        return $this;
     }
 }

@@ -7,13 +7,13 @@ return [
         'Strapieno\User\Model\UserModelInitializer'
     ],
     'invokables' => [
-        'Strapieno\User\Model\Validator\UserNameAlreadyExist' => 'Strapieno\User\Model\Validator\UserNameAlreadyExist',
-        'Strapieno\User\Model\Validator\EmailAlreadyExist' => 'Strapieno\User\Model\Validator\EmailAlreadyExist',
-        'Strapieno\User\Model\Validator\EntityExist' => 'Strapieno\User\Model\Validator\EntityExist'
+        'Strapieno\User\Model\Validator\UserNameUnique' => 'Strapieno\User\Model\Validator\UserNameUnique',
+        'Strapieno\User\Model\Validator\EntityExist' => 'Strapieno\User\Model\Validator\EntityExist',
+        'Strapieno\User\Model\Validator\EmailUnique' => 'Strapieno\User\Model\Validator\EmailUnique'
     ],
     'aliases' => [
-        'userusernamealreadyexist' => 'Strapieno\User\Model\Validator\UserNameAlreadyExist',
-        'useremailalreadyexist' => 'Strapieno\User\Model\Validator\EmailAlreadyExist',
+        'user-usernameunique' => 'Strapieno\User\Model\Validator\UserNameUnique',
+        'user-emailunique' => 'Strapieno\User\Model\Validator\EmailUnique',
         'user-entityexist' => 'Strapieno\User\Model\Validator\EntityExist'
     ]
 ];
