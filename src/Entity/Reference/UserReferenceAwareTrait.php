@@ -23,7 +23,7 @@ trait UserReferenceAwareTrait
      * @param UserReference $userReference
      * @return $this
      */
-    public function setUserReference(UserReference $userReference)
+    public function setUserReference(UserReference $userReference = null)
     {
         $this->userReference = $userReference;
         return $this;
