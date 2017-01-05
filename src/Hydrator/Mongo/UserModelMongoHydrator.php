@@ -6,6 +6,7 @@ use Matryoshka\Model\Wrapper\Mongo\Hydrator\Strategy\MongoDateStrategy;
 use Strapieno\User\Model\Entity\State\UserStateManager;
 use Strapieno\User\Model\Entity\State\UserStateStrategy;
 use Strapieno\Utils\Hydrator\Mongo\DateHistoryHydrator;
+use Strapieno\Utils\Hydrator\Strategy\StateStrategy;
 use Zend\Stdlib\Hydrator\Filter\FilterComposite;
 use Zend\Stdlib\Hydrator\Filter\MethodMatchFilter;
 
@@ -23,8 +24,8 @@ class UserModelMongoHydrator extends DateHistoryHydrator
             new MongoDateStrategy('Y-m-d')
         );
 
-        $strategy = new UserStateStrategy();
-        $strategy->setUserStateManager(new UserStateManager())
+        $strategy = new StateStrategy();
+        $strategy->setStateManager(new UserStateManager())
             ->setFirstStateName('registered');
         $this->addStrategy('state', $strategy);
 
